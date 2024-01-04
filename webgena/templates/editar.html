@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'editar.css' %}">
+{% endblock estilos %}
+{% block title %}Editar{% endblock title %}
+{% block contenido %}
+
+    <div class="cuadros">
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="enviar" type="submit" value="Editar">
+    </form>
+    </div>
+    
+
+{% endblock contenido %}

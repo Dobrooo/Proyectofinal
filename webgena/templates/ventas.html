@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block estilos %}<link rel="stylesheet" href="static/inicio.css">{% endblock estilos %}
+{% block title %}Ventas{% endblock title %}
+{% block agregarven %}
+<li><a href="{% url 'agregarventa' %}" class="boton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill = 'green' d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"></path></svg></a></li>
+{% endblock agregarven %}
+{% block contenido %}
+
+
+    
+    {% for ventas in object_list %}
+    <div class="cuadros">
+        <a href="{% url 'detalleventa' %}"> {{ventas.fecha}} </a>
+        <p>ID de venta: {{ventas.idventa}}</p>
+        <p>Empleado: {{ventas.dni_empleado.dni}}</p>
+
+        <a href="{% url 'agregardetalleventa' %}"> Añadir detalle</a><br>
+        <a href="{% url 'eliminarventa' ventas.idventa %}"> Eliminar </a>
+    </div>
+    {% endfor %}
+    
+{% endblock contenido %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+{% block estilos %}{% endblock estilos %}
+{% block title %}Inicio{% endblock title %}
+{% block contenido %}
+
+
+    <div class="cuadros">
+        {% csrf_token %}
+        {% if request.user.is_authenticated %}
+        <p>{{request.user}}</p>
+        <a href=""> Log out</a>
+        {%else%}
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="enviar" type="submit" value="Loguear">
+        </form>
+        {%endif%}
+    </div>
+
+{% endblock contenido %}

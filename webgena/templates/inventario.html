@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block estilos %}{% endblock estilos %}
+{% block title %}Inventario{% endblock title %}
+{% block agregarpro%}
+    <li><a href="{% url 'añadirproducto' %}" class="boton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill = 'green' d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"></path></svg></a></li>
+{% endblock agregarpro%}
+{% block contenido %}
+
+
+    
+
+    {% for productos in object_list %}
+    <div class="cuadros">
+        <a href="{% url 'detalle' productos.idproducto %}"> {{productos.nombre}} </a>
+            <p>Stock {{productos.stock}} </p>
+            <p>Precio compra {{productos.precio_compra}}</p>
+            <p>Precio venta {{productos.precio_venta}}</p>
+            <a href="{% url 'editar' productos.idproducto %}"> Editar producto </a>
+            <a href="{% url 'eliminarproducto' productos.idproducto %}"> Eliminar </a>
+    </div>
+
+    
+{% endfor %}
+
+{% endblock contenido %}

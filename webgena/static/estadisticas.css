@@ -1,0 +1,15 @@
+.contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.cuadros{
+    height: 44%;
+    width: 30%;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px 2px rgb(148 153 157 / 72%);
+    overflow: scroll;
+    overflow-x: hidden;
+}

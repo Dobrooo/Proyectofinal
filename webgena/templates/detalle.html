@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'detalle.css' %}">
+{% endblock estilos %}
+{% block title %}Detalle{% endblock title %}
+{% block contenido %}
+
+<h1> Información del producto: <b>{{object.nombre}}</b></h1>
+    <div class="cuadros">
+        <p>ID del producto: {{object.idproducto}}</p>
+        <p>Nombre: {{object.nombre}}</p>
+        <p>Precio de compra: ${{object.precio_compra}}</p>
+        <p>Precio de venta: {{object.precio_venta}}</p>
+        <p>Stock: {{object.stock}}</p>
+        <p>Stock mínimo: {{object.stock_min}}</p>
+        <p>Código de barras: {{object.codbarras}}</p>
+
+        <a href="{% url 'editar' object.idproducto %}"> Editar producto </a>
+       
+    </div>
+    
+    
+
+{% endblock contenido %}

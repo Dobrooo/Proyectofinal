@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block estilos %}
+{% endblock estilos %}
+{% block title %}Detalle ventas{% endblock title %}
+{% block contenido %}
+
+
+
+{% for detalle_venta in object_list %}
+
+   
+
+    <div class="cuadros">
+        <h3> Información de la venta: {{detalle_venta.idventa.fecha}}</h3>
+        <p>ID de la venta: {{detalle_venta.idventa.idventa}}</p>
+        <p>ID del detalle: {{detalle_venta.idventadetalle}}</p>
+        <p>Producto: {{detalle_venta.producto.nombre}}</p>
+        <p>Cantidad: {{detalle_venta.cantidad}}</p>
+        <p>Importe: ${{detalle_venta.importe_unit}}</p>
+        <a href="{% url 'editardetalleventa' detalle_venta.idventadetalle %}"> Editar detalle </a>
+        <a href="{% url 'eliminardetalleventa' detalle_venta.idventadetalle %}"> Eliminar </a>
+    </div>
+
+ {%endfor%}
+
+{% endblock contenido %}

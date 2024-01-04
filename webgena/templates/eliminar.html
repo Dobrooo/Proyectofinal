@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'editar.css' %}">
+{% endblock estilos %}
+{% block title %}Editar{% endblock title %}
+{% block contenido %}
+
+    <div class="cuadros">
+    <form method="post">
+    {% csrf_token %}
+    <input type="submit" value="Eliminar">
+    </form>
+
+    <a href="{% url 'inicio' %}"> Volver </a>
+    </div>
+    
+
+{% endblock contenido %}
+
+
+
+

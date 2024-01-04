@@ -1,0 +1,48 @@
+.nombre{
+    width: 100%;
+    position: absolute;
+    font-size: xxx-large;
+    text-decoration: underline;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    padding: 0px;
+}
+.tutorial{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+}
+p{
+    display: flex;
+    height: 44px;
+    align-items: center;
+    margin: 0px;
+    background-color: transparent;
+    padding: 0px;
+    padding-bottom: 15px;
+    box-shadow: 1px 1px transparent;
+}
+.final{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+}
+.contenedor{
+    display: block;
+    overflow: hidden;
+}
+@media (max-width:475px) {
+    .nombre{
+        font-size: xx-large;
+    }
+}
+@media (max-width:345px) {
+    .nombre{
+        font-size: x-large;
+    }
+}

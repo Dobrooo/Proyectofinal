@@ -1,0 +1,33 @@
+form{
+    background-color: paleturquoise;
+    display: flex;
+    border-radius: 10px;
+    width: fit-content;
+    flex-direction: column;
+}
+.enviar{
+    border-radius: 5px;
+    height: 10%;
+    width: 100%;
+    
+}
+.enviar:hover{
+    color: green;
+    border-radius: 8px;
+}
+input{
+    border-radius: 5px;
+    border-color: cadetblue;
+    border-style: solid;
+    box-shadow: 0px 0px 9px 0px cadetblue;
+}
+select{
+    border-radius: 5px;
+    border-color: cadetblue;
+    border-style: solid;
+    box-shadow: 0px 0px 9px 0px cadetblue;
+    width: 177px;
+}
+input:focus-visible{
+    background-color: rgb(255, 255, 255);
+}

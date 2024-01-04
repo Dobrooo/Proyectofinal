@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% csrf_token %}
+{% load static %}
+{% block estilos %}
+{% endblock estilos %}
+{% block title %}Empleados{% endblock title %}
+{% block agregarempl %}
+<li><a href="{% url 'agregarempleado' %}" class="boton"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill = 'green' d="M7.75 2a.75.75 0 0 1 .75.75V7h4.25a.75.75 0 0 1 0 1.5H8.5v4.25a.75.75 0 0 1-1.5 0V8.5H2.75a.75.75 0 0 1 0-1.5H7V2.75A.75.75 0 0 1 7.75 2Z"></path></svg></a></li>
+{% endblock agregarempl %}
+{% block contenido %}
+
+
+    
+
+    {% for empleados in object_list %}
+    <div class="cuadros">
+            <p> Nombre: {{empleados.nombre}}</p>
+            <p> Apellido: {{empleados.apellido}}</p>
+            <p> DNI: {{empleados.dni}}</p>
+            <p> Usuario: {{empleados.usuario}}</p>
+            <p> Direccion: {{empleados.direccion}}</p>
+            <p> Telefono: {{empleados.telefono}}</p>
+            <p> Mail: {{empleados.mail}}</p>
+            <a href="{% url 'eliminarempleado' empleados.dni %}">Eliminar</a>
+            
+    </div>
+
+{% endfor %}
+
+<h4 class="final">
+  Registrado como  {{request.user}}<br>
+
+  Genarroca, Dobro, MatiMelino 2024.
+  <a href="{% url 'logout' %}">Logout</a> 
+</h4>
+{% endblock contenido %}
